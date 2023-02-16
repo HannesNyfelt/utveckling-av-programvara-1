@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const quotes = require("./data/quotes.json")
-server.use(express.static(__dirname + '/../public'))
+app.use(express.static(__dirname + '/../public'))
 
 app.get("/api/quote", (req, res) => {
     const random = quotes[Math.floor(Math.random() * quotes.length)]
