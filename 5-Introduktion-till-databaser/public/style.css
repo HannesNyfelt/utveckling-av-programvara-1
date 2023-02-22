@@ -1,0 +1,31 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#div {
+    margin: 20px;
+    height: auto;
+    width: auto;
+}
+
+.games {
+    margin-top: 20px;
+    list-style: none;
+}
+
+.game {
+    background-color: lightgray;
+    padding: 10px;
+}
+
+.game:nth-child(odd) {
+    background-color: rgb(231, 229, 229);
+}

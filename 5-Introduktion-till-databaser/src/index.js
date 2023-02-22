@@ -9,9 +9,14 @@ const app = express()
 app.use(express.static(__dirname + '/../public'))
 
 app.get('/api/games', (req, res) => {
-    connection.query(
+    const games = connection.query(
         'SELECT * FROM `game`',
+        function (err, rows) {
+            console.log(err);
+            res.json(rows)
+        }
     )
+
 })
 
 app.listen(3000, () => {
