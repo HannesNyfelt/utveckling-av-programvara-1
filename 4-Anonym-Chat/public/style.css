@@ -1,0 +1,37 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: column;
+    height: 100vh;
+}
+
+li {
+    background-color: lightgray;
+    list-style: none;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 30px;
+}
+
+#content {
+    height: 95%;
+}
+
+.date {
+    font-size: 15px;
+    color: gray;
+}
+
+#input {
+    width: 100%;
+    position: sticky;
+    bottom: 0;
+    margin-bottom: 20px;
+}

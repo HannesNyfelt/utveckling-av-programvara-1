@@ -9,6 +9,7 @@ send.addEventListener('click', () => {
 })
 
 socket.on('msg', (msg) => {
-    document.getElementById('ul').innerHTML += `<li>${msg}</li>`
-
+    let date = new Date().toLocaleDateString()
+    let time = new Date().toLocaleTimeString()
+    document.getElementById('ul').innerHTML += `<li>${msg}<h6 class = "date">${date} ${time}</h6></li> `
 })
