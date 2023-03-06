@@ -5,15 +5,33 @@
 
 body {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
 #div {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(8, 100px);
+    grid-template-columns: repeat(6, 160px);
     grid-column-gap: 10px;
     grid-row-gap: 15px;
+}
+
+form {
+    float: left;
+}
+
+.poke {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid black;
+    padding: 20px;
+}
+
+.image {
+    height: 60px;
+    width: auto;
+    margin: 10px;
 }
