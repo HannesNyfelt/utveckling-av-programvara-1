@@ -8,8 +8,8 @@ const connection = mysql.createConnection({
 const app = express()
 app.use(express.static(__dirname + '/../public'))
 
-app.get('/api/temperature', async (req, res) => {
-    const [rows] = await connection.promise().query('SELECT * FROM temperature')
+app.get('/api/temperature/search', async (req, res) => {
+    const [rows] = await connection.promise().query('SELECT * FROM temperature WHERE year LIKE ?', ['%' + req.query.year + '%'])
     res.json(rows)
 })
 
