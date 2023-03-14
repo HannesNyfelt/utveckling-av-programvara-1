@@ -14,6 +14,21 @@ app.get('/api/pizza', async (req, res) => {
     res.json(rows)
 })
 
+app.post('/api/newPizza', async (req, res) => {
+    connection.query("INSERT INTO pizza(name, ingredients, grade) VALUES(?, ?, ?)"),
+        [req.body.name, req.body.ingredients, req.body.grade],
+        function (err, results, fields) {
+            res.status(200).json(results)
+        }
+})
+
+app.put('/api/pizza:id', async (req, res) => {
+
+})
+
+app.delete('/api/pizza:id', async (req, res) => {
+
+})
 
 app.listen(3000, () => {
     console.log('connected to webb');
