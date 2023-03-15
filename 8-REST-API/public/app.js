@@ -3,9 +3,7 @@ const btn = document.querySelector("button")
 
 fetchPizzas()
 
-btn.addEventListener("click", () => {
-    saveNewPizza()
-})
+
 
 async function fetchPizzas() {
     pizzas.innerHTML = ""
@@ -35,5 +33,59 @@ function saveNewPizza() {
         const pizzaGrade = document.querySelector("#grade").value
 
         const data = { name: pizzaName, ingredients: pizzaIngredients, grade: pizzaGrade }
+
+        fetch("/api/newPizza", {
+            methof: 'POST',
+            headers: {
+                'Content-Type': 'applications/json'
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('Success:', data);
+                fetchPizzas()
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+            });
     }
+    catch (err) {
+        console.log("Sorry something went very wrong!!")
+    }
+}
+
+btn.addEventListener("click", () => {
+    saveNewPizza()
+})
+
+function removePizza(id) {
+    try {
+        const data = { id: id }
+
+        fetch("/api/deletePizza", {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                console.log('Success:', data);
+                fetchPizzas()
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+            });
+
+    }
+    catch (err) {
+        console.log("Sorry something went very wrong!!")
+    }
+}
+
+function editPizza(id) {
+    location.replace(`/api/editPizza/${id}`)
+    location.replace(`/editPizza/${id}`)
 }
