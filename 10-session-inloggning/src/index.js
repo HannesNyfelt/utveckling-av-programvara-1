@@ -22,6 +22,7 @@ server.use(cookieParser())
 server.use(express.urlencoded())
 server.use(express.json())
 
+server.use(express.static(__dirname + '/../public'))
 
 server.get('/', (req, res) => {
     res.sendFile(path.resolve('public/index.html'))
