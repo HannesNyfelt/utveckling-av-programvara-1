@@ -26,5 +26,3 @@ function printArray(arr: Array<number>) {
 printArray(myArray);
 
 console.log(addNumbers(myNumber, 10));
-
-
