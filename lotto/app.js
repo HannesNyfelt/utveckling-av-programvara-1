@@ -1,5 +1,6 @@
 const btn = document.querySelector('button')
 const div = document.querySelector('#results')
+const div2 = document.querySelector('#amount')
 
 
 btn.addEventListener('click', () => {
